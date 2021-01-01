@@ -5,10 +5,10 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackQueryHandler, CommandHandler, run_async
 
-import skylee.modules.sql.connection_sql as sql
-from skylee import SUDO_USERS, dispatcher
-from skylee.modules.helper_funcs import chat_status
-from skylee.modules.helper_funcs.alternate import send_message, typing_action
+import utah.modules.sql.connection_sql as sql
+from utah import SUDO_USERS, dispatcher
+from utah.modules.helper_funcs import chat_status
+from utah.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
