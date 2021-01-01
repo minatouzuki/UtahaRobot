@@ -86,7 +86,7 @@ if ENV:
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
 
 else:
-    from skylee.config import Development as Config
+    from utah.config import Development as Config
 
     TOKEN = Config.API_KEY
     try:
@@ -165,7 +165,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from skylee.modules.helper_funcs.handlers import CustomCommandHandler
+from utah.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
