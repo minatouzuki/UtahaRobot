@@ -9,5 +9,3 @@ Can be found as [utah](http://t.me/Kasumiutahabot)
 
 Join the [news channel](https://t.me/uthahaupd) if you just want to stay in the loop about new features or
 announcements.
-
-Note to maintainers that all schema changes will be found in the commit messages, and its their responsibility to read any new commits.
