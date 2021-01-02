@@ -150,6 +150,13 @@ if SPAMWATCH == None:
 else:
     spamwtc = spamwatch.Client(SPAMWATCH)
 
+REDIS_URL = Config.REDIS_URI
+REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
+
+try:
+    REDIS.ping()
+    LOGGER.info("Your redis server is now alive!")
+    
 
 # Telethon
 api_id = TELETHON_ID
