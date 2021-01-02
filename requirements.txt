@@ -28,3 +28,4 @@ spamwatch
 bleach
 git+https://github.com/starry69/python-markdown2.git
 alphabet_detector
+cachetools
