@@ -6,8 +6,8 @@ import bs4
 import jikanpy
 import requests
 from telegram.utils.helpers import mention_html
-from Shoko import OWNER_ID, SUDO_USERS, REDIS, dispatcher
-from Shoko.modules.disable import DisableAbleCommandHandler
+from utah import OWNER_ID, SUDO_USERS, REDIS, dispatcher
+from utah.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
