@@ -3,6 +3,7 @@ import os
 import sys
 
 import spamwatch
+from redis import StrictRedis
 import telegram.ext as tg
 from telethon import TelegramClient
 
