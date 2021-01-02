@@ -10,6 +10,7 @@ def convert(speed):
     return round(int(speed) / 1048576, 2)
 
 
+@dev_plus
 @run_async
 def speedtestxyz(update: Update, context: CallbackContext):
     buttons = [
