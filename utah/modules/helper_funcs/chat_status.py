@@ -2,7 +2,7 @@ from functools import wraps
 
 from telegram import Chat, ChatMember, User
 
-from utah import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
+from utah import DEL_CMDS, OWNER_ID, SUDO_USERS, WHITELIST_USERS
 from utah.mwt import MWT
 
 
