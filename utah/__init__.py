@@ -15,7 +15,7 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-LOGGER.info("Starting Shoko...")
+LOGGER.info("Starting Utah...")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -25,7 +25,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     quit(1)
 
 
-from Shoko.config import Development as Config
+from utah.config import Development as Config
 
 TOKEN = Config.BOT_TOKEN
 try:
@@ -115,7 +115,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from Shoko.modules.helper_funcs.handlers import CustomCommandHandler
+from utah.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
