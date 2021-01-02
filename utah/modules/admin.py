@@ -8,24 +8,24 @@ from telegram.ext import CommandHandler, Filters, CallbackContext
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html, escape_markdown, mention_markdown
 
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import (
+from utah import dispatcher
+from utah.modules.disable import DisableAbleCommandHandler
+from utah.modules.helper_funcs.chat_status import (
     bot_admin,
     can_promote,
     user_admin,
     can_pin,
     ADMIN_CACHE
 )
-from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from tg_bot.modules.helper_funcs.admin_rights import (
+from utah.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from utah.modules.helper_funcs.admin_rights import (
     user_can_pin,
     user_can_promote,
     user_can_changeinfo,
 )
-from tg_bot.modules.helper_funcs.alternate import typing_action
-from tg_bot.modules.connection import connected
-from tg_bot.modules.log_channel import loggable
+from utah.modules.helper_funcs.alternate import typing_action
+from utah.modules.connection import connected
+from utah.modules.log_channel import loggable
 
 @run_async
 @bot_admin
