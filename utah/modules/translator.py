@@ -57,8 +57,8 @@ def gtts(update, context):
         with open("meikobot.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
-        if os.path.isfile("meikobot.mp3"):
-            os.remove("meikobot.mp3")
+        if os.path.isfile("utahabot.mp3"):
+            os.remove("utahabot.mp3")
 
 
 # Open API key
