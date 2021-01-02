@@ -80,8 +80,6 @@ if ENV:
     STRICT_GBAN = bool(os.environ.get('STRICT_GBAN', False))
     WORKERS = int(os.environ.get('WORKERS', 8)) 
 
-    CASH_API_KEY = os.environ.get('CASH_API_KEY', None)
-    TIME_API_KEY = os.environ.get('TIME_API_KEY', None)
     AI_API_KEY = os.environ.get('AI_API_KEY', None)
     WALL_API = os.environ.get('WALL_API', None)
     API_WEATHER = os.environ.get('API_WEATHER', None)
@@ -91,10 +89,6 @@ if ENV:
     SPAMWATCH = os.environ.get('SPAMWATCH_API', None)
     REDIS_URL = os.environ.get('REDIS_URL', None)
     CUSTOM_CMD = os.environ.get('CUSTOM_CMD', ('/', '!'))
-    REPOSITORY = os.environ.get('REPOSITORY', "")
-    IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
-    IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
 
 
     try:
@@ -138,7 +132,7 @@ api_hash = API_HASH
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 client = TelegramClient("saber", API_ID, API_HASH)
-pbot = Client("saberPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("utah", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 dispatcher = updater.dispatcher
 
@@ -148,7 +142,7 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 
 # Load at end to ensure all prev variables have been set
-from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler
+from utah.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
