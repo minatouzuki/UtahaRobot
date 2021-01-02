@@ -165,3 +165,24 @@ def user_not_admin(func):
             return func(update, context, *args, **kwargs)
 
     return is_not_admin
+
+
+def dev_plus(func):
+    @wraps(func)
+    def is_dev_plus_func(update: Update, context: CallbackContext, *args, **kwargs):
+        bot = context.bot
+        user = update.effective_user
+
+        if user.id in OWNER_ID:
+            return func(update, context, *args, **kwargs)
+        elif not user:
+            pass
+        elif DEL_CMDS and " " not in update.effective_message.text:
+            update.effective_message.delete()
+        else:
+            update.effective_message.reply_text(
+                "This is a developer restricted command."
+                " You do not have permissions to run this."
+            )
+
+    return is_dev_plus_func
