@@ -13,7 +13,7 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-LOGGER.info("Starting Skylee...")
+LOGGER.info("Starting Utah...")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -35,21 +35,26 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+        DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
+        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
     except ValueError:
-        raise Exception("Your sudo users list does not contain valid integers.")
+        raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
+        DEMONS = set(int(x) for x in os.environ.get("DEMONS", "").split())
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WHITELIST_USERS = set(
-            int(x) for x in os.environ.get("WHITELIST_USERS", "").split()
-        )
+        WOLVES = set(int(x) for x in os.environ.get("WOLVES", "").split())
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
+
+    try:
+        TIGERS = set(int(x) for x in os.environ.get("TIGERS", "").split())
+    except ValueError:
+        raise Exception("Your tiger users list does not contain valid integers.")
+
     try:
         WHITELIST_CHATS = set(
             int(x) for x in os.environ.get("WHITELIST_CHATS", "").split()
@@ -98,19 +103,26 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
 
     try:
-        SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
+        DRAGONS = set(int(x) for x in Config.DRAGONS or [])
+        DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
     except ValueError:
-        raise Exception("Your sudo users list does not contain valid integers.")
+        raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = set(int(x) for x in Config.SUPPORT_USERS or [])
+        DEMONS = set(int(x) for x in Config.DEMONS or [])
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WHITELIST_USERS = set(int(x) for x in Config.WHITELIST_USERS or [])
+        WOLVES = set(int(x) for x in Config.WOLVES or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
+
+    try:
+        TIGERS = set(int(x) for x in Config.TIGERS or [])
+    except ValueError:
+        raise Exception("Your tiger users list does not contain valid integers.")
+
     try:
         WHITELIST_CHATS = set(int(x) for x in Config.WHITELIST_CHATS or [])
     except ValueError:
@@ -141,7 +153,8 @@ else:
     TELETHON_ID = Config.TELETHON_ID
     SPAMWATCH = Config.SPAMWATCH_API
 
-SUDO_USERS.add(OWNER_ID)
+DRAGONS.add(OWNER_ID)
+DEV_USERS.add(OWNER_ID)
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH == None:
@@ -160,9 +173,11 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
 dispatcher = updater.dispatcher
 
-SUDO_USERS = list(SUDO_USERS)
-WHITELIST_USERS = list(WHITELIST_USERS)
-SUPPORT_USERS = list(SUPPORT_USERS)
+DRAGONS = list(DRAGONS) + list(DEV_USERS)
+DEV_USERS = list(DEV_USERS)
+WOLVES = list(WOLVES)
+DEMONS = list(DEMONS)
+TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
 from utah.modules.helper_funcs.handlers import CustomCommandHandler
