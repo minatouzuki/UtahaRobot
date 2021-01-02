@@ -1,7 +1,7 @@
 import speedtest
-from Mizuhararobot import OWNER_ID, dispatcher
-from Mizuhararobot.modules.disable import DisableAbleCommandHandler
-from Mizuhararobot.modules.helper_funcs.chat_status import dev_plus
+from utah import OWNER_ID, dispatcher
+from utah.modules.disable import DisableAbleCommandHandler
+from utah.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 
