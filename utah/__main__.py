@@ -56,7 +56,10 @@ Wanna Add me to your Group? Just click the button below!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add Me To Group ➕", url="t.me/Kasumiutahabot?startgroup=true"            
+            text="Add Me To Group ➕", url="t.me/Kasumiutahabot?startgroup=true" 
+    ), 
+        InlineKeyboardButton(
+            text="Source Code (Under GPLV3)", url="https://github.com/minatouzuki/UtahaRobot"),            
     ]
 ]
 
@@ -174,7 +177,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/0a6a55b868d5e7d874295.jpg",
+                "https://wallpapercave.com/wp/wp5094123.png", 
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
