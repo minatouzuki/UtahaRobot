@@ -169,8 +169,7 @@ def user_not_admin(func):
 
 def dev_plus(func):
     @wraps(func)
-    def is_dev_plus_func(update: Update, context: CallbackContext, *args, **kwargs):
-        bot = context.bot
+    def is_dev_plus_func(update, context, *args, **kwargs):
         user = update.effective_user
 
         if user.id in OWNER_ID:
