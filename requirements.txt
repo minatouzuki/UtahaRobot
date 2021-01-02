@@ -5,8 +5,8 @@ requests
 telethon
 PyGithub
 sqlalchemy
-pyrogram
-TgCrypto
+pyrogram>=1.0.7
+TgCrypto>=1.2.2
 python-telegram-bot==12.8
 psycopg2-binary
 pythonping
@@ -19,7 +19,6 @@ demjson
 wget
 bs4
 telegraph
-pillow
 psutil
 speedtest-cli>=2.0.2
 googletrans==3.1.0a0
@@ -31,3 +30,6 @@ alphabet_detector
 redis
 html5lib
 jikanpy
+aiohttp>=2.2.5
+Pillow>=4.2.0
+pyrate-limiter
