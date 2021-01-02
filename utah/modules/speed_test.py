@@ -1,7 +1,7 @@
 import speedtest
-from Mizuhararobot import DEV_USERS, dispatcher
+from Mizuhararobot import OWNER_ID, dispatcher
 from Mizuhararobot.modules.disable import DisableAbleCommandHandler
-from Mizuhararobot.modules.helper_funcs.chat_status import dev_plus
+from Mizuhararobot.modules.helper_funcs.chat_status
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 
@@ -10,7 +10,6 @@ def convert(speed):
     return round(int(speed) / 1048576, 2)
 
 
-@dev_plus
 @run_async
 def speedtestxyz(update: Update, context: CallbackContext):
     buttons = [
@@ -28,7 +27,7 @@ def speedtestxyz(update: Update, context: CallbackContext):
 def speedtestxyz_callback(update: Update, context: CallbackContext):
     query = update.callback_query
 
-    if query.from_user.id in DEV_USERS:
+    if query.from_user.id in OWNER_ID:
         msg = update.effective_message.edit_text("Running a speedtest....")
         speed = speedtest.Speedtest()
         speed.get_best_server()
