@@ -425,17 +425,17 @@ def __chat_settings__(chat_id, user_id):
 
 __help__ = """
 *Admin only:*
- ✗ /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
+ ✗ /gbanstat <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
 
 Spam shield uses @Spamwatch API and Global bans to remove Spammers as much as possible from your chatroom!
 
 *What is SpamWatch?*
 
 SpamWatch maintains a large constantly updated ban-list of spambots, trolls, bitcoin spammers and unsavoury characters.
-@Meikobot will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group[.](https://telegra.ph/file/c1051d264a5b4146bd71e.jpg)
+Utaha will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group[.](https://telegra.ph/file/c1051d264a5b4146bd71e.jpg)
 """
 
-__mod_name__ = "Spam Shield"
+__mod_name__ = "Global Bans"
 
 GBAN_HANDLER = CommandHandler(
     "gban",
@@ -456,7 +456,7 @@ GBAN_LIST = CommandHandler(
 )
 
 GBAN_STATUS = CommandHandler(
-    "spamshield", gbanstat, pass_args=True, filters=Filters.group
+    "antispam", gbanstat, pass_args=True, filters=Filters.group
 )
 
 GBAN_ENFORCER = MessageHandler(Filters.all & Filters.group, enforce_gban)
