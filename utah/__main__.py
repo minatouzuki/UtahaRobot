@@ -40,9 +40,9 @@ from utah.modules.helper_funcs.misc import paginate_modules
 from utah.modules.purge import client
 
 PM_START_TEXT = f"""
-Hey There ! My name is 𝙈𝙚𝙞𝙠𝙤.
-I'm here to make your group management fun and easy!
-I have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
+Hey There ! My name is Utaha.
+I'm here to manage your groups in fun and easiest way!
+I will keep your groups safe from scammers.
 Please Click Help Button For Assistance And Help Regarding Special Modules
 You can find the list of available commands with Help Module.
 Any issues or need help related to me?
@@ -56,9 +56,7 @@ Wanna Add me to your Group? Just click the button below!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add Me To Group ➕", url="t.me/meikobot?startgroup=true"
-        ),
-        InlineKeyboardButton(text="Updates & Info 📃", url="https://t.me/meikosupport"),
+            text="Add Me To Group ➕", url="t.me/Kasumiutahabot?startgroup=true"            
     ]
 ]
 
@@ -67,7 +65,7 @@ buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="hel
 
 HELP_STRINGS = f"""
 Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
+I'm a group management bot based on anime theme with a few fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
