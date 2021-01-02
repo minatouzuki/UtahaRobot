@@ -192,7 +192,7 @@ def new_member(update, context):
             elif new_mem.id == context.bot.id:
                 update.effective_message.reply_text(
                     "Hey {}, I'm {}! Thank you for adding me to {}"
-                    "I Will Try My Best To Manage Your Group Efficiently And Don't Forget To Join @MeikoSupport For More Info And Updates.".format(
+                    "I Will Try My Best To Manage Your Group Efficiently.".format(
                         user.first_name, context.bot.first_name, chat_name
                     ),
                     reply_to_message_id=reply,
@@ -200,7 +200,7 @@ def new_member(update, context):
 
                 context.bot.send_message(
                     MESSAGE_DUMP,
-                    "Meiko have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
+                    "Utaha have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
                         chat.title, chat.id
                     ),
                     parse_mode=ParseMode.HTML,
