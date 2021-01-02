@@ -130,8 +130,7 @@ api_id = API_ID
 api_hash = API_HASH
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-client = TelegramClient("saber", API_ID, API_HASH)
-pbot = Client("utah", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+client = TelegramClient("utah", API_ID, API_HASH)
 
 dispatcher = updater.dispatcher
 
