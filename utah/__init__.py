@@ -25,7 +25,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     quit(1)
 
 
-from utah.config import Development as Config
+from Shoko.config import Development as Config
 
 TOKEN = Config.BOT_TOKEN
 try:
